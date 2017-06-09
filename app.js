@@ -1,4 +1,4 @@
-const quotes = [
+var quotes = [
   {
     quote: "Men are like steel. When they lose their temper, they lose their worth.",
     citation: "Chuck Norris",
@@ -31,10 +31,10 @@ const quotes = [
   }
 ]
 
-var mainQuote;
-var quoteCitation;
-var quoteLocation;
-var quoteDate;
+ var mainQuote = "";
+// var quoteCitation = "";
+// var quoteLocation = "";
+// var quoteDate = "";
 
 //var randomQuote = quotes[Math.floor(Math.random()*quotes.length)]
 var writeQuote = document.querySelector('blockquote');
@@ -47,6 +47,6 @@ writeQuote.innerHTML = '<p>' + '"' + mainQuote + '"' + '</p>';
 //   console.log(quoteCitation);
 // }
 mainQuote = quotes[0].quote;
-alert(mainQuote);
+console.log(mainQuote);
 
 //writeQuote.innerHTML = randomQuote;
