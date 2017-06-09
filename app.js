@@ -31,14 +31,15 @@ var quotes = [
   }
 ]
 
- var mainQuote = "";
-// var quoteCitation = "";
-// var quoteLocation = "";
-// var quoteDate = "";
+  var mainQuote = "";
+  var quoteCitation = "";
+  var quoteLocation = "";
+  var quoteDate = "";
 
 //var randomQuote = quotes[Math.floor(Math.random()*quotes.length)]
-var writeQuote = document.querySelector('blockquote');
-writeQuote.innerHTML = '<p>' + '"' + mainQuote + '"' + '</p>';
+var writeQuote = document.querySelector('blockquote p');
+var writeCitation = document.querySelector('footer cite');
+
 
 // for(var i = 0; i < quotes.length; i += 1){
 //   mainQuote = quotes[0].quote;
@@ -47,6 +48,12 @@ writeQuote.innerHTML = '<p>' + '"' + mainQuote + '"' + '</p>';
 //   console.log(quoteCitation);
 // }
 mainQuote = quotes[0].quote;
-console.log(mainQuote);
+quoteCitation = quotes[0].citation;
+quoteLocation = quotes[0].where;
+quoteDate = quotes[0].date;
+
+writeQuote.innerHTML = '<p>' + '"' + mainQuote + '"' + '</p>';
+writeCitation.innerHTML = quoteCitation + quoteLocation + quoteDate;
+
 
 //writeQuote.innerHTML = randomQuote;
