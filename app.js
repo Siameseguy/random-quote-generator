@@ -31,8 +31,22 @@ const quotes = [
   }
 ]
 
+var mainQuote;
+var quoteCitation;
+var quoteLocation;
+var quoteDate;
 
-const randomQuote = quotes[Math.floor(Math.random()*quotes.length)]
-const writeQuote = document.querySelector('blockquote');
+//var randomQuote = quotes[Math.floor(Math.random()*quotes.length)]
+var writeQuote = document.querySelector('blockquote');
+writeQuote.innerHTML = '<p>' + '"' + mainQuote + '"' + '</p>';
 
-writeQuote.innerHTML = randomQuote;
+// for(var i = 0; i < quotes.length; i += 1){
+//   mainQuote = quotes[0].quote;
+//   quoteCitation = quotes[0].citation;
+//   console.log(mainQuote);
+//   console.log(quoteCitation);
+// }
+mainQuote = quotes[0].quote;
+alert(mainQuote);
+
+//writeQuote.innerHTML = randomQuote;
