@@ -1,3 +1,4 @@
+// array of quotes
 var quotes = [
   {
     quote: "Men are like steel. When they lose their temper, they lose their worth.",
@@ -31,6 +32,11 @@ var quotes = [
   }
 ]
 
+var colors = [
+  "red", "green", "purple", "orange", "#1f71ff"
+]
+
+// created variables needed for getRandomQuote function
 var mainQuote = "";
 var quoteCitation = "";
 var quoteLocation = "";
@@ -38,13 +44,21 @@ var quoteDate = "";
 
 
 
+// grab elements from the DOM
 var writeQuote = document.querySelector('blockquote p');
 var writeCitation = document.querySelector('footer cite');
 var changeButton = document.querySelector('button');
+var body = document.querySelector('body');
 
-
-function changeQuote() {
+// get random quote
+function getRandomQuote() {
   var randomQuote = quotes[Math.floor(Math.random()*quotes.length)];
+
+  var changeColor = colors[Math.floor(Math.random()*colors.length)];
+
+  console.log(changeColor);
+
+  // put randomQuote results in variables
   mainQuote = randomQuote.quote;
   quoteCitation = randomQuote.citation;
   quoteLocation = randomQuote.where;
@@ -52,7 +66,9 @@ function changeQuote() {
 
   writeQuote.innerHTML = '<p>' + '"' + mainQuote + '"' + '</p>';
   writeCitation.innerHTML = quoteCitation + " " + quoteLocation + " " + quoteDate;
-
+  document.body.style.backgroundColor = changeColor;
 }
 
-changeButton.addEventListener('click', changeQuote());
+
+// eventlistner for button
+changeButton.addEventListener('click', getRandomQuote());
