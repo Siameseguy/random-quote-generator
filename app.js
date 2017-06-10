@@ -1,5 +1,5 @@
 // array of quotes
-var quotes = [
+const quotes = [
   {
     quote: "Men are like steel. When they lose their temper, they lose their worth.",
     citation: "Chuck Norris",
@@ -32,31 +32,29 @@ var quotes = [
   }
 ]
 
-var colors = [
+const colors = [
   "red", "green", "purple", "orange", "#1f71ff"
 ]
 
 // created variables needed for getRandomQuote function
-var mainQuote = "";
-var quoteCitation = "";
-var quoteLocation = "";
-var quoteDate = "";
+let mainQuote = "";
+let quoteCitation = "";
+let quoteLocation = "";
+let quoteDate = "";
 
 
 
 // grab elements from the DOM
-var writeQuote = document.querySelector('blockquote p');
-var writeCitation = document.querySelector('footer cite');
-var changeButton = document.querySelector('button');
-var body = document.querySelector('body');
+const writeQuote = document.querySelector('blockquote p');
+const writeCitation = document.querySelector('footer cite');
+const changeButton = document.querySelector('button');
+const body = document.querySelector('body');
 
 // get random quote
 function getRandomQuote() {
-  var randomQuote = quotes[Math.floor(Math.random()*quotes.length)];
+  let randomQuote = quotes[Math.floor(Math.random()*quotes.length)];
 
-  var changeColor = colors[Math.floor(Math.random()*colors.length)];
-
-  console.log(changeColor);
+  let changeColor = colors[Math.floor(Math.random()*colors.length)];
 
   // put randomQuote results in variables
   mainQuote = randomQuote.quote;
