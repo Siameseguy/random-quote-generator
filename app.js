@@ -31,29 +31,28 @@ var quotes = [
   }
 ]
 
-  var mainQuote = "";
-  var quoteCitation = "";
-  var quoteLocation = "";
-  var quoteDate = "";
+var mainQuote = "";
+var quoteCitation = "";
+var quoteLocation = "";
+var quoteDate = "";
 
-//var randomQuote = quotes[Math.floor(Math.random()*quotes.length)]
+
+
 var writeQuote = document.querySelector('blockquote p');
 var writeCitation = document.querySelector('footer cite');
+var changeButton = document.querySelector('button');
 
 
-// for(var i = 0; i < quotes.length; i += 1){
-//   mainQuote = quotes[0].quote;
-//   quoteCitation = quotes[0].citation;
-//   console.log(mainQuote);
-//   console.log(quoteCitation);
-// }
-mainQuote = quotes[0].quote;
-quoteCitation = quotes[0].citation;
-quoteLocation = quotes[0].where;
-quoteDate = quotes[0].date;
+function changeQuote() {
+  var randomQuote = quotes[Math.floor(Math.random()*quotes.length)];
+  mainQuote = randomQuote.quote;
+  quoteCitation = randomQuote.citation;
+  quoteLocation = randomQuote.where;
+  quoteDate = randomQuote.date;
 
-writeQuote.innerHTML = '<p>' + '"' + mainQuote + '"' + '</p>';
-writeCitation.innerHTML = quoteCitation + quoteLocation + quoteDate;
+  writeQuote.innerHTML = '<p>' + '"' + mainQuote + '"' + '</p>';
+  writeCitation.innerHTML = quoteCitation + " " + quoteLocation + " " + quoteDate;
 
+}
 
-//writeQuote.innerHTML = randomQuote;
+changeButton.addEventListener('click', changeQuote());
